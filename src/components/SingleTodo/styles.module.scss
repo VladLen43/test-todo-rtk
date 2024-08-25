@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 10px;
+
+  button {
+    width: fit-content;
+    border-radius: 10px;
+    min-height: 20px;
+    border: none;
+    cursor: pointer;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 5px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 20px;
+    }
+  }
+}

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface ITodo {
   id: number;
@@ -25,7 +24,7 @@ export const fetchTodos = createAsyncThunk(
       });
 
       if (!responce.ok) {
-        throw new Error('Hello, unlucky to change status');
+        throw new Error('Hello, unlucky to fetch todos');
       }
       const data = await responce.json();
       return data.todos;
@@ -50,7 +49,7 @@ export const addTodo = createAsyncThunk(
       });
 
       if (!responce.ok) {
-        throw new Error('Hello, unlucky to change status');
+        throw new Error('Hello, unlucky to add todo');
       }
       const data = await responce.json();
       return data;
@@ -72,7 +71,7 @@ export const deleteTodo = createAsyncThunk(
       });
 
       if (!responce.ok) {
-        throw new Error('Hello, unlucky to change status');
+        throw new Error('Hello, unlucky to delete todo');
       }
       return id;
     } catch (error: any) {
@@ -173,7 +172,4 @@ export const todoSlice = createSlice({
       });
   },
 });
-
-//export const { addTodo, removeTodo, changeTodo } = todoSlice.actions;
-
 export default todoSlice.reducer;

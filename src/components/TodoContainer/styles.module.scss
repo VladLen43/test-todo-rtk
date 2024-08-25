@@ -1,0 +1,28 @@
+.container {
+  height: 600px;
+  width: 400px;
+  background-color: #424242;
+  border-radius: 15px;
+  padding: 20px;
+  color: #fff;
+}
+.done_todos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+.add_button {
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+input {
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}

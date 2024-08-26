@@ -6,6 +6,7 @@ import { addTodo, fetchTodos } from '../../redux/reducers/todoSlice';
 
 export const TodoContainer = () => {
   const todos = useAppSelector((state) => state.todos);
+  const loading = useAppSelector((state) => state.loading)
   const dispatch = useAppDispatch();
   const [newTodo, setNewTodo] = useState('');
   const [isEdit, setIsEdit] = useState(false);
@@ -22,6 +23,7 @@ export const TodoContainer = () => {
 
   return (
     <div className={styles.container}>
+      {loading ? <div className={styles.loader}>Loading...</div> : <>
       <button onClick={handleStatus} className={styles.add_button}>Добавить</button>
       {isEdit && (
         <input
@@ -46,6 +48,7 @@ export const TodoContainer = () => {
             <SingleTodo key={todo.id} todo={todo} />
           ))}
       </div>
+      </> }
     </div>
   );
 };
